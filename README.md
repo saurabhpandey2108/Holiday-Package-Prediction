@@ -1,41 +1,35 @@
-# Holiday-Package-Prediction
-This project aims to predict whether customers will purchase a holiday package based on their demographics and preferences. By analyzing customer data, the model provides valuable insights for marketing strategies and targeted campaigns.
+# Holiday Package Prediction
 
-## Table of Contents
-  Introduction
-  Dataset
-  Model Architecture
-  Installation
-  Usage
-  Results
-  Contributing
-  License
+## Overview
+Predict customer purchases of holiday packages using machine learning, enabling businesses to target the right customers efficiently and reduce marketing costs.
 
-## Introduction
+## Dataset & Features
+List and explain features like Age, CityTier, ProductPitched, Passport, MonthlyIncome, etc. Describe the target variable `ProdTaken`.
 
-Predicting customer behavior is crucial in the travel and tourism industry. This project leverages machine learning to forecast holiday package purchases based on various features such as customer demographics, spending habits, and travel preferences. The goal is to help businesses design better marketing strategies.
+## Smart Pipeline
+1. Data Cleaning & Preprocessing  
+2. Feature Selection & Engineering  
+3. Modeling: Logistic Regression, Random Forest, XGBoost, etc.  
+4. Evaluation: Accuracy, Recall, Precision, F1-score, and Gain/Lift Analysis  
 
-## Dataset
-The dataset contains information about customers, including:-
+## Results
+| Model         | Recall | Precision | Accuracy |
+|---------------|--------|-----------|----------|
+| XGBoost (best)| 0.85   | 0.60      | 0.75     |
 
-Age  
-Gender  
-Annual Income  
-Spending Score  
-Preferred Destination  
-Mode of Transport  
-Past Travel Experience  
+Top features: Passport, Product Pitched, CityTier, Marital Status (Single), etc.
 
-Target Variable:-
+## Business Impact
+- Reached 80% of potential buyers by targeting top 20%.
+- Lowered CAC from $5.31 to $1.25, improving ROI.
 
-Purchase Decision (Yes/No)  
+## Recommendations
+- Focus on high-potential segments (passport holders, tier-3 city, single, basic pitch).  
+- Develop unique campaigns for low-potential groups.  
+- Consider expanding features, testing advanced models, and deploying via web app.
 
-## Model Architecture
-The project uses machine learning algorithms to predict holiday package purchases. The model pipeline includes:-  
-
-Data Preprocessing: Handling missing values, encoding categorical variables, and scaling features.    
-Model Training: Algorithms such as logistic regression, decision trees, and random forests are explored.    
-Evaluation: Metrics like accuracy, precision, recall, and F1-score are used to assess performance.   
-
-
-
+## Installation
+```bash
+pip install -r requirements.txt
+# or
+pip install -e .

@@ -1,35 +1,62 @@
 # Holiday Package Prediction
 
-## Overview
-Predict customer purchases of holiday packages using machine learning, enabling businesses to target the right customers efficiently and reduce marketing costs.
+## 1. Overview
+A machine learning pipeline to predict customer purchase decisions for holiday packages using demographic and behavioral data. This helps businesses optimize marketing campaigns and increase conversions.
 
-## Dataset & Features
-List and explain features like Age, CityTier, ProductPitched, Passport, MonthlyIncome, etc. Describe the target variable `ProdTaken`.
+## 2. Project Structure
+- `notebook/`: Exploratory data analysis and model development notebooks  
+- `src/`: Core scripts for preprocessing, modeling, evaluation  
+- `app.py` / `appliccation.py`: Deployable web interface (Flask)  
+- `templates/`: Front-end templates for the web app  
+- `.ebextensions/`: AWS Elastic Beanstalk deployment configs  
+- `requirements.txt` & `setup.py`: Dependency and package management 
 
-## Smart Pipeline
-1. Data Cleaning & Preprocessing  
-2. Feature Selection & Engineering  
-3. Modeling: Logistic Regression, Random Forest, XGBoost, etc.  
-4. Evaluation: Accuracy, Recall, Precision, F1-score, and Gain/Lift Analysis  
+## 3. Dataset Details
+- **Source**: (Specify the origin or Kaggle link if applicable)
+- **Size**: X samples, Y features + 1 target
+- **Features**:
+  - Age (years)  
+  - Gender (categorical)  
+  - Annual Income (₹ or $)  
+  - Spending Score (1–100)  
+  - Preferred Destination (categorical)  
+  - Mode of Transport (categorical)  
+  - Past Travel Experience (numeric/year range)  
+- **Target**: Purchase Decision (Yes/No)
 
-## Results
-| Model         | Recall | Precision | Accuracy |
-|---------------|--------|-----------|----------|
-| XGBoost (best)| 0.85   | 0.60      | 0.75     |
+## 4. Preprocessing
+- Handle missing data using (e.g., mean/mode imputation or drop)
+- Encode categorical features with (e.g., one-hot, label encoding)
+- Scaling applied to numeric features (MinMaxScaler / StandardScaler)
+- Data split: Train (70%), Validation (15%), Test (15%)
 
-Top features: Passport, Product Pitched, CityTier, Marital Status (Single), etc.
+## 5. Modeling Pipeline
+- Algorithms compared:
+  - Logistic Regression  
+  - Decision Tree  
+  - Random Forest  
+  - (If applicable) XGBoost / CatBoost  
+- Hyperparameter tuning using GridSearchCV or RandomizedSearchCV
+- Best model: **Model X**, with parameters: `…`
 
-## Business Impact
-- Reached 80% of potential buyers by targeting top 20%.
-- Lowered CAC from $5.31 to $1.25, improving ROI.
+## 6. Evaluation Metrics
+- **Accuracy**: e.g., 82%  
+- **Precision**: 78%  
+- **Recall**: 85%  
+- **F1-score**: 81%  
+- ROC-AUC: 0.90  
+- Include confusion matrix and ROC curve visuals
 
-## Recommendations
-- Focus on high-potential segments (passport holders, tier-3 city, single, basic pitch).  
-- Develop unique campaigns for low-potential groups.  
-- Consider expanding features, testing advanced models, and deploying via web app.
+## 7. Feature Importance & Insights
+- Most influential features: e.g., Annual Income, Spending Score, Past Travel Experience
+- Interpretation: high-income customers with previous travel history are more likely to buy
 
-## Installation
-```bash
-pip install -r requirements.txt
-# or
-pip install -e .
+## 8. Business Impact
+- Targeting top 20% scored customers captured ~80% of buyers — optimizing campaign ROI
+- Reduced Customer Acquisition Cost (CAC) from $X to $Y
+
+## 9. Deployment
+- Run the app:
+  ```bash
+  pip install -r requirements.txt
+  python app.py

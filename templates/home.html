@@ -1,111 +1,143 @@
 <html>
 <body>
-    <div class="login">
-       <h1>Student Exam Performance Indicator</h1>
-   
-       <form action="{{ url_for('predict_datapoint')}}" method="post">
-        <h1>
-            <legend>Student Exam Performance Prediction</legend>
-        </h1>
-        <div class="mb-3">
-            <label class="form-label">Gender</label>
-            <select class="form-control" name="gender" placeholder="Enter you Gender" required>
-                <option class="placeholder" selected disabled value="">Select your Gender</option>
-                <option value="male">
-                    Male
-                </option>
-                <option value="female">
-                    Female
-                </option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Race or Ethnicity</label>
-            <select class="form-control" name="ethnicity" placeholder="Enter you ethnicity" required>
-                <option class="placeholder" selected disabled value="">Select Ethnicity</option>
-                <option value="group A">
-                    Group A
-                </option>
-                <option value="group B">
-                    Group B
-                </option>
-                <option value="group C">
-                    Group C
-                </option>
-                <option value="group D">
-                    Group D
-                </option>
-                <option value="group E">
-                    Group E
-                </option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Parental Level of Education</label>
-            <select class="form-control" name="parental_level_of_education"
-                placeholder="Enter you Parent Education" required>
-                <option class="placeholder" selected disabled value="">Select Parent Education</option>
-                <option value="associate's degree">
-                    associate's degree
-                </option>
-                <option value="bachelor's degree">
-                    bachelor's degree
-                </option>
-                <option value="high school">
-                    high school
-                </option>
-                <option value="master's degree">
-                    master's degree
-                </option>
-                <option value="some college">
-                    some college
-                </option>
-                <option value="some high school">
-                    some high school
-                </option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Lunch Type</label>
-            <select class="form-control" name="lunch" placeholder="Enter you Lunch" required>
-                <option class="placeholder" selected disabled value="">Select Lunch Type</option>
-                <option value="free/reduced">
-                    free/reduced
-                </option>
-                <option value="standard">
-                    standard
-                </option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Test preparation Course</label>
-            <select class="form-control" name="test_preparation_course" placeholder="Enter you Course"
-                required>
-                <option class="placeholder" selected disabled value="">Select Test_course</option>
-                <option value="none">
-                    None
-                </option>
-                <option value="completed">
-                    Completed
-                </option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Writing Score out of 100</label>
-            <input class="form-control" type="number" name="reading_score"
-                placeholder="Enter your Reading score" min='0' max='100' />
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Reading Score out of 100</label>
-            <input class="form-control" type="number" name="writing_score"
-                placeholder="Enter your Reading Score" min='0' max='100' />
-        </div>
-        <div class="mb-3">
-            <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required />
-        </div>
-    </form>
-    <h2>
-       THE  prediction is {{results}}
-    </h2>
-   <body>
+	<div class="login">
+		<h1>Holiday Package Purchase Prediction</h1>
+	
+		<form action="{{ url_for('predict_datapoint')}}" method="post">
+			<h1>
+				<legend>Enter Customer Details</legend>
+			</h1>
+			<div class="mb-3">
+				<label class="form-label">Age</label>
+				<input class="form-control" type="number" name="Age" min='0' max='120' required />
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Type of Contact</label>
+				<select class="form-control" name="TypeofContact" required>
+					<option class="placeholder" selected disabled value="">Select</option>
+					<option value="Self Enquiry">Self Enquiry</option>
+					<option value="Company Invited">Company Invited</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">City Tier</label>
+				<select class="form-control" name="CityTier" required>
+					<option class="placeholder" selected disabled value="">Select</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Duration Of Pitch (minutes)</label>
+				<input class="form-control" type="number" name="DurationOfPitch" step="0.1" min='0' required />
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Occupation</label>
+				<select class="form-control" name="Occupation" required>
+					<option class="placeholder" selected disabled value="">Select</option>
+					<option value="Salaried">Salaried</option>
+					<option value="Small Business">Small Business</option>
+					<option value="Large Business">Large Business</option>
+					<option value="Free Lancer">Free Lancer</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Gender</label>
+				<select class="form-control" name="Gender" required>
+					<option class="placeholder" selected disabled value="">Select</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Number Of Person Visiting</label>
+				<input class="form-control" type="number" name="NumberOfPersonVisiting" min='1' required />
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Number Of Followups</label>
+				<input class="form-control" type="number" name="NumberOfFollowups" step="0.1" min='0' required />
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Product Pitched</label>
+				<select class="form-control" name="ProductPitched" required>
+					<option class="placeholder" selected disabled value="">Select</option>
+					<option value="Basic">Basic</option>
+					<option value="Standard">Standard</option>
+					<option value="Deluxe">Deluxe</option>
+					<option value="Super Deluxe">Super Deluxe</option>
+					<option value="King">King</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Preferred Property Star</label>
+				<input class="form-control" type="number" name="PreferredPropertyStar" step="0.1" min='1' max='5' required />
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Marital Status</label>
+				<select class="form-control" name="MaritalStatus" required>
+					<option class="placeholder" selected disabled value="">Select</option>
+					<option value="Married">Married</option>
+					<option value="Unmarried">Unmarried</option>
+					<option value="Divorced">Divorced</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Number Of Trips (year)</label>
+				<input class="form-control" type="number" name="NumberOfTrips" step="0.1" min='0' required />
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Passport</label>
+				<select class="form-control" name="Passport" required>
+					<option class="placeholder" selected disabled value="">Select</option>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Pitch Satisfaction Score</label>
+				<select class="form-control" name="PitchSatisfactionScore" required>
+					<option class="placeholder" selected disabled value="">Select</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Own Car</label>
+				<select class="form-control" name="OwnCar" required>
+					<option class="placeholder" selected disabled value="">Select</option>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Number Of Children Visiting</label>
+				<input class="form-control" type="number" name="NumberOfChildrenVisiting" step="0.1" min='0' required />
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Designation</label>
+				<select class="form-control" name="Designation" required>
+					<option class="placeholder" selected disabled value="">Select</option>
+					<option value="Executive">Executive</option>
+					<option value="Senior Manager">Senior Manager</option>
+					<option value="Manager">Manager</option>
+					<option value="AVP">AVP</option>
+					<option value="VP">VP</option>
+				</select>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Monthly Income</label>
+				<input class="form-control" type="number" name="MonthlyIncome" step="0.01" min='0' required />
+			</div>
+			<div class="mb-3">
+				<input class="btn btn-primary" type="submit" value="Predict Purchase" required />
+			</div>
+		</form>
+		<h2>
+			Prediction: {{results}}
+		</h2>
+	<body>
 </html>

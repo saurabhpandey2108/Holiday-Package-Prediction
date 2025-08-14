@@ -1,0 +1,28 @@
+<html>
+<body>
+	<h1>Customer Segments & Strategies</h1>
+	{% if not meta %}
+		<p>No segmentation results found. Run training first.</p>
+	{% else %}
+		<p>Best k: {{ meta.best_k if meta.best_k else meta['best_k'] }}, Silhouette: {{ '%.3f' % (meta.silhouette if meta.silhouette else meta['silhouette']) }}</p>
+		<table border="1" cellpadding="6" cellspacing="0">
+			<tr>
+				<th>Segment</th>
+				<th>Avg Monthly Income</th>
+				<th>Avg Trips</th>
+				<th>Avg Preferred Star</th>
+				<th>Suggested Strategy</th>
+			</tr>
+			{% for seg, info in profiles.items() %}
+			<tr>
+				<td>{{ seg }}</td>
+				<td>{{ info.avg_monthly_income if info.avg_monthly_income else info['avg_monthly_income'] }}</td>
+				<td>{{ info.avg_trips if info.avg_trips else info['avg_trips'] }}</td>
+				<td>{{ info.avg_pref_star if info.avg_pref_star else info['avg_pref_star'] }}</td>
+				<td>{{ info.strategy if info.strategy else info['strategy'] }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	{% endif %}
+</body>
+</html> 

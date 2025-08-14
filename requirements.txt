@@ -7,4 +7,6 @@ catboost
 xgboost
 dill
 Flask
+xlrd
+openpyxl
 #-e .

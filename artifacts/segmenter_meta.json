@@ -1,0 +1,36 @@
+{
+  "best_k": 5,
+  "silhouette": 0.17634200218584747,
+  "profiles": {
+    "0": {
+      "avg_monthly_income": 26637.75,
+      "avg_trips": 3.32,
+      "avg_pref_star": 3.65,
+      "strategy": "Premium bundle offer (Deluxe/King), loyalty perks, concierge call"
+    },
+    "1": {
+      "avg_monthly_income": 32616.62,
+      "avg_trips": 3.57,
+      "avg_pref_star": 3.58,
+      "strategy": "Premium bundle offer (Deluxe/King), loyalty perks, concierge call"
+    },
+    "2": {
+      "avg_monthly_income": 22643.16,
+      "avg_trips": 3.28,
+      "avg_pref_star": 3.56,
+      "strategy": "Entry-level Basic/Standard with limited-time discount via email/SMS"
+    },
+    "3": {
+      "avg_monthly_income": 19852.19,
+      "avg_trips": 3.1,
+      "avg_pref_star": 3.58,
+      "strategy": "Entry-level Basic/Standard with limited-time discount via email/SMS"
+    },
+    "4": {
+      "avg_monthly_income": 35878.95,
+      "avg_trips": 3.34,
+      "avg_pref_star": 3.48,
+      "strategy": "Premium bundle offer (Deluxe/King), loyalty perks, concierge call"
+    }
+  }
+}
